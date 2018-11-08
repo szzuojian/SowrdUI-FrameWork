@@ -1,12 +1,21 @@
 <template>
-  <MainFrame></MainFrame>
+  <div v-if="store.state.login">
+    <MainFrame></MainFrame>
+  </div>
+  <div v-else>
+    <Login></Login>
+  </div>
 </template>
 
 <script>
 import MainFrame from './components/MainFrame'
+import Login from './components/Login'
 export default {
   name: 'App',
-  components: {MainFrame}
+  components: {
+    MainFrame,
+    Login
+  }
 }
 </script>
 
